@@ -5,7 +5,8 @@ FROM node:16
 WORKDIR /frontend
 
 # Copy the frontend files to the container
-COPY ./frontend /frontend
+COPY . /frontend
+
 
 # Install dependencies
 RUN npm install
