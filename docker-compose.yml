@@ -3,8 +3,9 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile.backend
-    ports:
-      - "5000:5000"
+   ports:
+  - "5001:5000" # Replace 5001 with an available port
+
     volumes:
       - ./backend:/app
     working_dir: /app
