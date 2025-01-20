@@ -44,27 +44,37 @@ const App = () => {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
+   // Fetch data from the backend
   useEffect(() => {
-    const interval = setInterval(() => {
-      const newHumidity = Math.floor(Math.random() * 100);
-      const newAirQuality = Math.floor(Math.random() * 150);
-      const newTemperature = Math.floor(Math.random() * 35) + 15; // Simulated temperature
-      setHumidity(newHumidity);
-      setAirQuality(newAirQuality);
-      setTemperature(newTemperature); // Update temperature
-      setHistoricalData((prev) => [
-        ...prev.slice(-10),
-        {
-          time: new Date().toLocaleTimeString(),
-          humidity: newHumidity,
-          airQuality: newAirQuality,
-          temperature: newTemperature,
-        },
-      ]);
-    }, 5000);
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://127.0.0.1:5000/");
+        const data = await response.json();
+        setAirQuality(data.air_quality_level);
+        setHumidity(data.air_humidity_level);
+	setTemperature(data.temperature)
+        setHistoricalData((prev) => [
+          // ...prev.slice(-10), // changed this line
+          ...prev.slice(-1), // changed this line
+          {
+            time: new Date().toLocaleTimeString(),
+            humidity: data.air_humidity_level,
+            airQuality: data.air_quality_level,
+	    temperature: data.temperature
+           },
+        ]);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+    // const interval = setInterval(fetchData, 5000); // Fetch every 5 seconds
+    const interval = setInterval(fetchData, 200); // Fetch every 200 micro second
 
     return () => clearInterval(interval);
   }, []);
+
 
   useEffect(() => {
     if (isPlaying) {
