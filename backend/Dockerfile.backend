@@ -18,4 +18,5 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 EXPOSE 5000
 
 # Run the sample data generation script and backend application simultaneously
-CMD ["python", "sample_data.py"]
+CMD ["sh", "-c", "python sample_data.py & python app.py"]
+
