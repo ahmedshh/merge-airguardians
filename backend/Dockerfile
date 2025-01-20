@@ -1,17 +1,22 @@
-# Dockerfile for Python Backend
-FROM python:3.9-slim
+# Use a lightweight Python image
+FROM python:3.10-slim
+
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
 # Set the working directory
 WORKDIR /app
 
-# Copy the Python files and dependencies
-COPY app.py get_arduino_data.py requirements.txt ./
+# Copy all backend files to the container
+COPY . /app
 
 # Install Python dependencies
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
-# Expose the port Flask will run on
+# Expose Flask port
 EXPOSE 5000
 
-# Command to run the Python app
+# Run the backend application
 CMD ["python", "app.py"]
+
