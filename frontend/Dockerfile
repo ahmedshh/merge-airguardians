@@ -1,20 +1,17 @@
-# Dockerfile for React Frontend
-FROM node:16-alpine
+# Use Node.js base image
+FROM node:16
 
 # Set the working directory
 WORKDIR /frontend
 
-# Copy the React project files
-COPY ./frontend ./
+# Copy the frontend files to the container
+COPY ./frontend /frontend
 
-# Install Node.js dependencies
+# Install dependencies
 RUN npm install
 
-# Build the React app
-RUN npm run build
-
-# Expose the port for the React app
+# Expose the port for React
 EXPOSE 3000
 
-# Command to start the React app
+# Run the React application
 CMD ["npm", "start"]
