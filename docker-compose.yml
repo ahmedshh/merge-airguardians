@@ -6,8 +6,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile.backend
     ports:
-  - "5001:5000"
-
+      - "5001:5000"  # Changed the external port to 5001
     volumes:
       - ./backend:/app
     working_dir: /app
@@ -18,7 +17,7 @@ services:
       context: ./frontend
       dockerfile: Dockerfile.frontend
     ports:
-      - "3000:3000"
+      - "3001:3000"  # Changed the external port to 3001
     volumes:
       - ./frontend:/frontend
     working_dir: /frontend
