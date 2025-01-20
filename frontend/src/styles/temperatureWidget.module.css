@@ -1,0 +1,23 @@
+.temperatureWidget {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin: 10px 0;
+  }
+  
+  .temperatureIcon {
+    font-size: 36px;
+    color: #ff5722;
+  }
+  
+  .temperatureInfo {
+    margin-left: 10px;
+  }
+  
+  .temperatureValue {
+    font-size: 24px;
+    margin: 0;
+  }
+  

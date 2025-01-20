@@ -1,0 +1,17 @@
+.mainContainer {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background-color: var(--card-background);
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alertItem {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin: 5px 0;
+  line-height: 1.6;
+}

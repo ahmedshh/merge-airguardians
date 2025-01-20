@@ -1,0 +1,22 @@
+svg {
+  font-family: Arial, sans-serif;
+}
+
+.bar-humidity {
+  opacity: 0.8;
+}
+
+.bar-airquality {
+  opacity: 0.8;
+}
+
+g.axis text {
+  font-size: 12px;
+}
+
+g.axis path,
+g.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}

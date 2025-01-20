@@ -1,0 +1,7 @@
+.svgContainer {
+  display: block;
+  margin: 1.25rem auto;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+}

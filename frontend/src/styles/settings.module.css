@@ -1,0 +1,30 @@
+.mainContainer {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid var(--card-border);
+  border-radius: 0.5rem;
+  background-color: var(--card-background);
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+.themeToggleBtn {
+  padding: 0.625rem 1.25rem;
+  background-color: var(--primary-button);
+  color: var(--button-text);
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.themeToggleBtn:hover {
+  transform: scale(1.1);
+}

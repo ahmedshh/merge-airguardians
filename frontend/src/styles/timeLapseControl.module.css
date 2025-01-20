@@ -1,0 +1,25 @@
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.25rem 0;
+}
+
+.playbackButton {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 0.313rem;
+  cursor: pointer;
+}
+
+.playbackButton:hover {
+  background-color: #0A593E;
+}
+
+.timeDisplay {
+  margin-left: 1.25rem;
+  font-size: 1rem;
+}

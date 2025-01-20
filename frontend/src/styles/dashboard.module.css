@@ -1,0 +1,19 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Space between sections */
+}
+
+.centeredWidget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.donutChart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Center the chart in its grid */
+}
