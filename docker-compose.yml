@@ -1,24 +1,19 @@
 version: '3.8'
-
 services:
-  backend:
+  app:
     build:
-      context: ./backend
-      dockerfile: Dockerfile.backend
-    ports:
-      - "5001:5000"  # Replace 5001 with an available port
-    volumes:
-      - ./backend:/app
-    working_dir: /app
-    command: python app.py
+      context: .
+      dockerfile: Dockerfile-app
+    container_name: app_container
+
+  get_sample_data:
+    build:
+      context: .
+      dockerfile: Dockerfile-get_sample_data
+    container_name: get_sample_data_container
 
   frontend:
     build:
-      context: ./frontend
-      dockerfile: Dockerfile.frontend
-    ports:
-      - "3001:3000"  # Replace 3001 with an available port
-    volumes:
-      - ./frontend:/frontend
-    working_dir: /frontend
-    command: npm start
+      context: .
+      dockerfile: Dockerfile-frontend
+    container_name: frontend_container
