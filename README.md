@@ -67,7 +67,4 @@ To ensure that the project runs smoothly and demonstrates the required functiona
 
 ---
 
-We are continuing to work on resolving the data flow issue in the Docker setup. Please let us know if further clarification or testing is needed.  
 
-Best regards,  
-**AirGuardians Team**  
