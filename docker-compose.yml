@@ -1,22 +1,24 @@
-services:
-  backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile.backend
-    ports:
-      - "5001:5000" # Replace 5001 with an available port
-    volumes:
-      - ./backend:/app
-    working_dir: /app
-    command: python app.py
+# docker-compose.yml
 
+version: "3.9"
+
+services:
   frontend:
     build:
-      context: ./frontend
+      context: .
       dockerfile: Dockerfile.frontend
     ports:
-      - "3001:3000"
+      - "3000:3000"
     volumes:
       - ./frontend:/frontend
-    working_dir: /frontend
-    command: npm start
+    environment:
+      - REACT_APP_API_URL=http://localhost:5000/api
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
