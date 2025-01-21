@@ -1,24 +1,24 @@
 version: '3.8'
-services:
-  backend_app:
-    build:
-      context: .
-      dockerfile: Dockerfile-backend-app
-    container_name: backend_app_container
-    ports:
-      - "5000:5000"  # Expose port 5000
 
-  get_sample_data:
+services:
+  backend:
     build:
-      context: .
-      dockerfile: Dockerfile-backend-data
-    container_name: get_sample_data_container
-    # No need for ports if this service doesn't require external access
+      context: ./backend
+      dockerfile: Dockerfile.backend
+    ports:
+      - "5001:5000"  # Replace 5001 with an available port
+    volumes:
+      - ./backend:/app
+    working_dir: /app
+    command: python app.py
 
   frontend:
     build:
-      context: .
-      dockerfile: Dockerfile-frontend
-    container_name: frontend_container
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
     ports:
-      - "3000:3000"  # Expose port 3000
+      - "3001:3000"  # Replace 3001 with an available port
+    volumes:
+      - ./frontend:/frontend
+    working_dir: /frontend
+    command: npm start
