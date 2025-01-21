@@ -1,9 +1,5 @@
 
 
-### Instructions for Professor
-
----
-
 ####  AirGuardians Project: Docker Setup and Alternate Start Method  
 
 We would like to provide an update regarding our AirGuardians project and its Docker setup. Below are detailed instructions for running our project, as well as an explanation of a minor limitation we encountered and the alternate approach we implemented to address it.
@@ -38,7 +34,7 @@ To ensure that the project runs smoothly and demonstrates the required functiona
    cd AirGuardians
    ```
 
-2. Locate the `start.bat` file in the project directory.
+2. Navigate to the `backend` folder where the `start.bat` file is located.
 
 3. **Run the `start.bat` file** by double-clicking it. This will automatically start:
    - The **backend** server (`app.py`)
@@ -65,4 +61,3 @@ To ensure that the project runs smoothly and demonstrates the required functiona
 2. **Alternate Setup**: The alternate batch script ensures functionality and successfully starts all components, demonstrating the full application behavior.
 3. **Windows-Only Compatibility**: The `start.bat` file works only on Windows systems. For other operating systems, the app must be started manually or through Docker.
 
----
