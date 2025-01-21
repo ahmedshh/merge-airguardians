@@ -1,19 +1,24 @@
 version: '3.8'
 services:
-  app:
+  backend_app:
     build:
       context: .
-      dockerfile: Dockerfile-app
-    container_name: app_container
+      dockerfile: Dockerfile-backend-app
+    container_name: backend_app_container
+    ports:
+      - "5000:5000"  # Expose port 5000
 
   get_sample_data:
     build:
       context: .
-      dockerfile: Dockerfile-get_sample_data
+      dockerfile: Dockerfile-backend-data
     container_name: get_sample_data_container
+    # No need for ports if this service doesn't require external access
 
   frontend:
     build:
       context: .
       dockerfile: Dockerfile-frontend
     container_name: frontend_container
+    ports:
+      - "3000:3000"  # Expose port 3000
