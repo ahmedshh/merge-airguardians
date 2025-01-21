@@ -17,6 +17,5 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 # Expose Flask port
 EXPOSE 5000
 
-# Run the backend application
-CMD ["python", "app.py"]
-
+# Run the sample data generation script and backend application simultaneously
+CMD ["python", "sample_data.py"]
