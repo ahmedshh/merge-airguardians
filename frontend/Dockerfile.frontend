@@ -1,18 +1,19 @@
-# Use Node.js base image
-FROM node:16
+# Frontend Dockerfile (Dockerfile.frontend)
 
-# Set the working directory
+# Use Node.js LTS image
+FROM node:16-alpine
+
+# Set working directory
 WORKDIR /frontend
 
-# Copy the frontend files to the container
-COPY . /frontend
-
+# Copy frontend files to container
+COPY ./frontend /frontend
 
 # Install dependencies
 RUN npm install
 
-# Expose the port for React
+# Expose the frontend port
 EXPOSE 3000
 
-# Run the React application
+# Run the frontend app
 CMD ["npm", "start"]
