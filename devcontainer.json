@@ -1,7 +1,7 @@
 {
   "name": "AirGuardians Development",
   "dockerFile": "Dockerfile",
-  "appPort": ["3000:3000", "5000:5000"],
+  "appPort": ["3001:3000", "5001:5000"],
   "postCreateCommand": "npm install --prefix frontend && pip install -r backend/requirements.txt",
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash"
