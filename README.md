@@ -40,18 +40,14 @@ To ensure that the project runs smoothly and demonstrates the required functiona
 
 2. Run the following batch script (`start.bat`) to start all components (backend, sample data generator, and frontend):
    ```batch
-   @echo off
-   REM Start the backend application
-   start cmd /k "python backend/app.py"
-   timeout /T 2 /nobreak
+start cmd /k "python app.py"
+timeout /T 2 /nobreak
 
-   REM Start the sample data generator
-   start cmd /k "python backend/sample_data.py"
-   timeout /T 2 /nobreak
+start cmd /k "python get_sample_data.py" // for sample data
+timeout /T 2 /nobreak
 
-   REM Start the frontend application
-   start cmd /k "cd frontend && timeout /T 1 /nobreak && npm start"
-   timeout /T 1 /nobreak
+start cmd /k "cd .. && cd frontend && timeout /T 1 /nobreak && npm start"
+timeout /T 1 /nobreak
    ```
 
 3. Access the application:
