@@ -1,6 +1,4 @@
-Here's the updated version with the clarification about using the `start.bat` file:
 
----
 
 ### Instructions for Professor
 
@@ -68,5 +66,3 @@ To ensure that the project runs smoothly and demonstrates the required functiona
 3. **Windows-Only Compatibility**: The `start.bat` file works only on Windows systems. For other operating systems, the app must be started manually or through Docker.
 
 ---
-
-Let us know if you encounter any issues or need further clarification.
