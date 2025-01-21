@@ -1,6 +1,4 @@
-Here is the updated instruction for your professor, reflecting the updated repository name and batch script.
 
----
 
 ### Instructions for Professor
 
